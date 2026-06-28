@@ -1,0 +1,186 @@
+/* ============================================================
+   PRESS — engineered editorial archive · global design system
+   ============================================================ */
+
+:root {
+	/* palette — warm paper-dark, bone ink, one vermillion signal */
+	--ink: #100e0c;
+	--ink-2: #17130f;
+	--ink-3: #201b15;
+	--bone: #ece6da;
+	--bone-dim: rgba(236, 230, 218, 0.58);
+	--bone-faint: rgba(236, 230, 218, 0.3);
+
+	--accent: #f4502a;
+	--accent-deep: #c93a18;
+	--accent-rgb: 244, 80, 42;
+
+	/* legacy aliases so existing var(--acid) refs keep resolving */
+	--acid: var(--accent);
+	--acid-deep: var(--accent-deep);
+
+	--rule: rgba(236, 230, 218, 0.12);
+	--rule-strong: rgba(236, 230, 218, 0.26);
+
+	/* type */
+	--font-display: 'Fraunces', 'Times New Roman', serif;
+	--font-sans: 'Hanken Grotesk', system-ui, sans-serif;
+	--font-mono: 'Spline Sans Mono', ui-monospace, monospace;
+
+	/* metrics */
+	--gutter: clamp(1.25rem, 4vw, 4.5rem);
+	--maxw: 1480px;
+	--ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+	text-rendering: optimizeLegibility;
+	font-optical-sizing: auto;
+}
+
+body {
+	background: var(--ink);
+	color: var(--bone);
+	font-family: var(--font-sans);
+	font-size: clamp(1rem, 0.95rem + 0.2vw, 1.08rem);
+	line-height: 1.5;
+	overflow-x: hidden;
+	font-weight: 400;
+	letter-spacing: -0.005em;
+}
+
+/* faint typographic column rules + a single warm light, baked in */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background-image: repeating-linear-gradient(
+		90deg,
+		var(--rule) 0,
+		var(--rule) 1px,
+		transparent 1px,
+		transparent clamp(80px, 11vw, 150px)
+	);
+	mask-image: linear-gradient(180deg, #000 0%, transparent 42%);
+	opacity: 0.45;
+}
+
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background:
+		radial-gradient(70rem 36rem at 50% -16%, rgba(var(--accent-rgb), 0.06), transparent 72%),
+		radial-gradient(120% 80% at 50% 120%, rgba(0, 0, 0, 0.5), transparent 60%);
+}
+
+::selection {
+	background: var(--accent);
+	color: var(--ink);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/* ---- typographic primitives ---- */
+.mono {
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--bone-dim);
+	font-weight: 500;
+}
+
+.serif {
+	font-family: var(--font-display);
+	font-style: italic;
+	font-weight: 400;
+}
+
+.acid {
+	color: var(--accent);
+}
+
+/* shared shell wrapper */
+.shell {
+	width: 100%;
+	max-width: var(--maxw);
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+	position: relative;
+	z-index: 1;
+}
+
+/* section eyebrow used across sections */
+.eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.65rem;
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--bone-dim);
+}
+.eyebrow .idx {
+	color: var(--accent);
+}
+
+/* a faint hairline */
+.rule {
+	height: 1px;
+	width: 100%;
+	background: var(--rule);
+	border: 0;
+}
+
+/* status mark — a crisp editorial registration diamond, no ping, no halo.
+   "Liveness" is carried by the real clock in the nav, not a blinking light. */
+.pulse {
+	width: 7px;
+	height: 7px;
+	flex: none;
+	background: var(--accent);
+	transform: rotate(45deg);
+}
+
+/* custom-cursor mode: hide native cursor on fine pointers */
+@media (hover: hover) and (pointer: fine) {
+	html.cursor-on,
+	html.cursor-on * {
+		cursor: none !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}

@@ -17,7 +17,7 @@
 		<div class="head" use:reveal>
 			<span class="eyebrow"><span class="idx">01</span> / Selected Work</span>
 			<h2 class="serif">Things I've<br />built &amp; shipped.</h2>
-			<p class="mono note">{projects.length} projects · 2022 — 2025 · hover for preview</p>
+			<p class="mono note">{projects.length} GitHub projects · 2024 — 2026 · hover for stack & signals</p>
 		</div>
 
 		<!-- the interactive index -->
@@ -37,6 +37,7 @@
 					href={p.href}
 					target="_blank"
 					rel="noopener"
+					aria-label={`Open ${p.title} on GitHub`}
 					class:dim={active !== null && active !== i}
 					class:on={active === i}
 					onmouseenter={() => (active = i)}
@@ -71,6 +72,11 @@
 						<p class="pblurb">{p.tagline}</p>
 						<div class="chips">
 							{#each p.stack as s}<span class="chip mono">{s}</span>{/each}
+						</div>
+						<div class="stats">
+							{#each p.highlights.slice(0, 3) as h}
+								<span class="stat mono"><strong>{h.value}</strong>{h.label}</span>
+							{/each}
 						</div>
 					</div>
 				</div>
@@ -239,6 +245,29 @@
 		border: 1px solid var(--rule);
 		border-radius: 100px;
 		color: var(--bone-dim);
+	}
+	.stats {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.45rem;
+		margin-top: 0.9rem;
+	}
+	.stat {
+		border: 1px solid var(--rule);
+		border-radius: 10px;
+		padding: 0.5rem;
+		color: var(--bone-dim);
+		font-size: 0.58rem;
+		line-height: 1.25;
+	}
+	.stat strong {
+		display: block;
+		color: var(--acid);
+		font-family: var(--font-display);
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1;
+		margin-bottom: 0.2rem;
 	}
 
 	@media (max-width: 860px) {

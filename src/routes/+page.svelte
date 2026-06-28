@@ -21,7 +21,7 @@
 	});
 
 	const title = `${profile.name} — ${profile.role}`;
-	const desc = `${profile.name} is a frontend engineer crafting fast, tactile web interfaces where engineering rigor meets editorial polish.`;
+	const desc = `${profile.name} is a backend-focused software engineer building scalable APIs, cloud-native systems, DevOps workflows, and AI-enabled applications.`;
 </script>
 
 <svelte:head>

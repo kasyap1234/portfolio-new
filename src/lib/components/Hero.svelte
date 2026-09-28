@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { profile } from '$lib/data';
 	import { magnetic } from '$lib/actions';
+	import { sceneState } from '$lib/scene.svelte';
 
 	const disciplines = [
 		'APIs & Services',
@@ -21,16 +22,21 @@
 		<hr class="rule load" style="--d: 80ms" />
 
 		<!-- headline statement -->
-		<h1 class="title">
-			<span class="kick mono load" style="--d: 140ms">
-				{profile.name} — {profile.role}, est. 2019
-			</span>
-			<span class="line load" style="--d: 220ms">Systems that</span>
-			<span class="line ln2 load" style="--d: 340ms">
-				stay <em class="acc">boring —</em>
-			</span>
-			<span class="line load" style="--d: 460ms">under load.</span>
-		</h1>
+		<div
+			class="title-wrap"
+			style="transform: translate3d({sceneState.smooth.x * -8}px, {sceneState.smooth.y * 6}px, 0)"
+		>
+			<h1 class="title">
+				<span class="kick mono load" style="--d: 140ms">
+					{profile.name} — {profile.role}, est. 2019
+				</span>
+				<span class="line load" style="--d: 220ms">Systems that</span>
+				<span class="line ln2 load" style="--d: 340ms">
+					stay <em class="acc">boring —</em>
+				</span>
+				<span class="line load" style="--d: 460ms">under load.</span>
+			</h1>
+		</div>
 
 		<!-- lower zone: lede + currently -->
 		<div class="lower">

@@ -12,7 +12,7 @@ export const profile = {
 			handle: '/in/kasyap-dharanikota-7400a8203',
 			href: 'https://www.linkedin.com/in/kasyap-dharanikota-7400a8203/'
 		},
-		{ label: 'X / Twitter', handle: '@kasyapdharanik1', href: 'https://twitter.com/kasyapdharanik1' },
+		{ label: 'X / Twitter', handle: '@kasyapdharanik1', href: 'https://x.com/kasyapdharanik1' },
 		{ label: 'Email', handle: 'kasyap3103@gmail.com', href: 'mailto:kasyap3103@gmail.com' }
 	]
 };
@@ -39,8 +39,32 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
-		slug: 'fastbrew',
+		slug: 'webx',
 		idx: '01',
+		title: 'webx',
+		tagline:
+			'The web toolkit for AI coding agents — scrape, search, map, crawl, index, extract, diff, serve. Self-hosted Firecrawl/Exa/Tavily alternative in one static Go binary.',
+		year: '2026',
+		timeframe: 'Sep 2026 — Oct 2026',
+		category: 'AI Tooling · OSS',
+		role: 'Creator / Core Engineer',
+		stack: ['Go', 'FTS5', 'go-rod', 'Metasearch', 'MCP', 'TLS fingerprinting'],
+		href: 'https://github.com/kasyap1234/webx',
+		links: [
+			{ label: 'Repository', href: 'https://github.com/kasyap1234/webx' },
+			{ label: 'Live site', href: 'https://webx-5sp.pages.dev' }
+		],
+		from: '#a8e6ff',
+		to: '#0b3d91',
+		highlights: [
+			{ value: '15+', label: 'search providers' },
+			{ value: '1', label: 'static binary' },
+			{ value: 'MIT', label: 'license' }
+		]
+	},
+	{
+		slug: 'fastbrew',
+		idx: '02',
 		title: 'FastBrew',
 		tagline:
 			'A Go-powered Homebrew companion with instant search, parallel downloads, resumable installs, and a Bubbletea TUI.',
@@ -62,7 +86,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'deeptick',
-		idx: '02',
+		idx: '03',
 		title: 'DeepTick',
 		tagline:
 			'AI stock research API using Elysia.js, LangChain DeepAgents, Exa search, and pgvector-backed memory.',
@@ -84,7 +108,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'edduhub',
-		idx: '03',
+		idx: '04',
 		title: 'EdduHub',
 		tagline:
 			'Education platform with Go services, Next.js UI, Ory Kratos auth, PostgreSQL migrations, seeded demos, and Playwright verification.',
@@ -106,7 +130,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'webhook-service',
-		idx: '04',
+		idx: '05',
 		title: 'Webhook Service',
 		tagline:
 			'Go webhook delivery service with event ingestion, subscription management, RabbitMQ workers, PostgreSQL, and HMAC-signed callbacks.',
@@ -128,7 +152,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'agromart',
-		idx: '05',
+		idx: '06',
 		title: 'AgroMart',
 		tagline:
 			'Multi-tenant agricultural inventory platform with Go services, Next.js, PostgreSQL, Docker, analytics, and RBAC.',
@@ -150,7 +174,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'stock-agent-langchain',
-		idx: '06',
+		idx: '07',
 		title: 'Advanced Swing Trade Bot',
 		tagline:
 			'Python multi-agent trading analysis system with parallel agents, risk scoring, backtesting, and persistent learning.',
@@ -172,7 +196,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'distributed-task-queue',
-		idx: '07',
+		idx: '08',
 		title: 'Distributed Task Queue',
 		tagline:
 			'Scalable Go task queue with Redis job storage, PostgreSQL results, recurring jobs, worker pools, and backoff.',
@@ -194,7 +218,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'url-shortner-microservice',
-		idx: '08',
+		idx: '09',
 		title: 'URL Shortener Microservice',
 		tagline:
 			'Go URL-shortener microservice using gRPC, PostgreSQL, Redis caching, and mutex-protected access counts.',
@@ -216,7 +240,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'polling-app',
-		idx: '09',
+		idx: '10',
 		title: 'Real-Time Polling App',
 		tagline:
 			'Go WebSocket voting system with a central hub, goroutines, channels, client registration, and live broadcasts.',
@@ -238,7 +262,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'qrcode-generator',
-		idx: '10',
+		idx: '11',
 		title: 'QR Code Generator API',
 		tagline:
 			'Go Echo backend that generates custom QR codes, retrieves QR images by ID, and returns batch results.',
@@ -260,7 +284,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'sys-info-cli',
-		idx: '11',
+		idx: '12',
 		title: 'Sys Info CLI',
 		tagline: 'Go command-line tool for CPU, RAM, disk, process, PID listing, and PID existence checks.',
 		year: '2025',
@@ -281,7 +305,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'expense-tracker',
-		idx: '12',
+		idx: '13',
 		title: 'Expense Tracker',
 		tagline:
 			'Secure multi-user expense tracker with JWT authentication, Google OAuth, isolated user data, and Dockerized services.',
